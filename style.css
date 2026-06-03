@@ -1,0 +1,284 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    padding-top: 0;
+}
+
+.color-acento{
+    color: #F72C25;
+    font-weight: bold;
+}
+
+h1{
+    font-size: 2rem;
+    text-align: center;
+    color: black
+}
+
+h2{
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+p{
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.btn-primary{
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: #F72C25;
+    border-color: #D72A22;
+    margin: 15px 0;
+}
+
+.btn-primary-2{
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    color: black;
+    background-color: white;
+    border: 2px solid #000000;
+    margin: 12px 0;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary:hover, .btn-primary:focus{
+    background-color: #D72A22;
+    border-color: #D72A22;
+}
+
+.btn-primary-2:hover, .btn-primary-2:focus{
+    background-color: rgb(255, 255, 255);
+    border-color: #000000;
+    color: #F72C25;
+}
+
+.hero .container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 25px 25px;
+}
+
+.container{
+    padding: 0px 15px;
+}
+
+header{
+    color: white;
+    background-color: white;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: -0.01em;
+    color: #F72C25;
+}
+
+.navbar-nav .nav-link{
+    font-size: 1rem;
+}
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.info{
+    background-color: #f8f9fa;
+    padding: 2rem 0;
+}
+
+#sobre-nosotros{
+    padding: 1rem 0;
+}
+
+#caracteristicas{
+    background-color: #f8f9fa;
+    padding: 2rem 0;
+}
+
+#nuestros-cursos h1{
+    padding: 1rem 0;
+    font-size: 1.8rem;
+}
+
+#nuestros-cursos .card{
+    background-position: center center;
+    background-size: cover;
+    padding: 5px 0px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.card-title{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #F72C25;
+}
+
+#preguntas-frecuentes{
+    padding: 2rem 0;
+    margin: 10px auto;
+    max-width: 800px;
+}
+
+footer{
+    background-color: #f8f9fa;
+    color: black;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+footer a{
+    margin: 0 auto;
+    max-width: 1200px;
+    color: black;
+}
+
+footer a:hover{
+    color: #000000;
+}
+
+/* Carousel fixes */
+.carousel{
+    position: relative;
+    z-index: 1;
+}
+
+.carousel-item img{
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Media queries para desktop */
+@media (min-width: 850px){
+    body{
+        padding-top: 76px; /* Espacio para el header fixed */
+    }
+
+    header{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .alert-warning{
+        margin: 0 auto;
+        max-width: 1200px;
+        padding: 10px 15px;
+        font-size: 1.2rem;
+    }
+
+    .hero h1{
+        font-size: 3rem;
+        margin: 0;
+    }
+
+    .hero p{
+        font-size: 1.2rem;
+        margin-top: 1rem;
+    }
+
+    .hero{
+        padding-top: 2rem;
+    }
+
+    #sobre-nosotros p{
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    /* Mejorar el carousel en desktop */
+    .carousel-item img{
+        height: 500px;
+    }
+
+    /* Mejorar características en desktop */
+    #caracteristicas{
+        display: flex;
+        align-items: center;
+    }
+
+    #caracteristicas span{
+        font-size: 2.5rem;
+    }
+
+    #caracteristicas h2{
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    #caracteristicas p{
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    #caracteristicas .container{
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin: 80px auto;
+    }
+
+    #caracteristicas img{
+        flex: 1;
+        max-width: 500px;
+    }
+
+    #caracteristicas .texto{
+        flex: 1;
+    }
+}
+
+/* Mejoras adicionales */
+.navbar-toggler:focus{
+    box-shadow: none;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card{
+    transition: transform 0.3s ease;
+}
+
+/* Mejorar responsividad de las cards */
+@media (max-width: 576px){
+    .card{
+        width: 100% !important;
+        max-width: 350px;
+    }
+}
+
+/* Arreglar el breadcrumb */
+.breadcrumb{
+    background-color: transparent;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+/* Centrar la paginación */
+.pagination{
+    justify-content: center;
+    margin-top: 2rem;
+}

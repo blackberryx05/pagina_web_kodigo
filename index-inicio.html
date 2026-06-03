@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kódigo - Tu futuro digital comienza aquí</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        html{
+            scroll-behavior: smooth;
+        }
+
+        body{
+            padding-top: 0;
+        }
+
+        .color-acento{
+            color: #F72C25;
+            font-weight: bold;
+        }
+
+        h1{
+            font-size: 2rem;
+            text-align: center;
+            color: black
+        }
+
+        h2{
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        p{
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .btn-primary{
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            background-color: #F72C25;
+            border-color: #D72A22;
+            margin: 15px 0;
+        }
+
+        .btn-primary-2{
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            color: black;
+            background-color: white;
+            border: 2px solid #000000;
+            margin: 12px 0;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover, .btn-primary:focus{
+            background-color: #D72A22;
+            border-color: #D72A22;
+        }
+
+        .btn-primary-2:hover, .btn-primary-2:focus{
+            background-color: rgb(255, 255, 255);
+            border-color: #000000;
+            color: #F72C25;
+        }
+
+        .hero .container{
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 25px 25px;
+        }
+
+        .container{
+            padding: 0px 15px;
+        }
+
+        header{
+            color: white;
+            background-color: white;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1.5rem;
+            letter-spacing: -0.01em;
+            color: #F72C25 !important;
+        }
+
+        .navbar-nav .nav-link{
+            font-size: 1rem;
+            color: #333 !important;
+        }
+
+        .navbar-nav .nav-link:hover{
+            color: #F72C25 !important;
+        }
+
+        .navbar-nav .nav-link.active{
+            color: #F72C25 !important;
+        }
+
+        .navbar-toggler{
+            border: none;
+            padding: 0.25rem 0.5rem;
+        }
+
+        .navbar-toggler:focus{
+            box-shadow: none;
+        }
+
+        .navbar-toggler-icon{
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23F72C25' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        .hero{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 3rem 0;
+        }
+
+        .info{
+            background-color: #f8f9fa;
+            padding: 2rem 0;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .info i{
+            font-size: 2rem;
+            color: #F72C25;
+            margin-bottom: 1rem;
+        }
+
+        .info a{
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .info a:hover{
+            color: #F72C25;
+        }
+
+        .carousel{
+            margin: 2rem 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .carousel img{
+            height: 400px;
+            object-fit: cover;
+        }
+
+        #sobre-nosotros{
+            background: linear-gradient(135deg, #F72C25 0%, #D72A22 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        #sobre-nosotros .texto p{
+            font-size: 1.3rem;
+            margin: 0;
+        }
+
+        #caracteristicas{
+            background-color: white;
+            padding: 3rem 0;
+        }
+
+        #caracteristicas .container{
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        #caracteristicas img{
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        #caracteristicas .texto h2{
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        #caracteristicas .texto p{
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        #nuestros-cursos{
+            background-color: #f8f9fa;
+            padding: 3rem 0;
+        }
+
+        #nuestros-cursos h1{
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .card{
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover{
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .card-img-top{
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .card-title{
+            color: #F72C25;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .card-text{
+            color: #555;
+            line-height: 1.6;
+        }
+
+        #preguntas-frecuentes{
+            background-color: white;
+            padding: 3rem 0;
+        }
+
+        #preguntas-frecuentes h1{
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .accordion-button{
+            background-color: #f8f9fa;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .accordion-button:focus{
+            border-color: #F72C25;
+            box-shadow: 0 0 0 0.25rem rgba(247, 44, 37, 0.25);
+        }
+
+        .accordion-button:not(.collapsed){
+            background-color: #F72C25;
+            color: white;
+        }
+
+        .accordion-item{
+            border: none;
+            margin-bottom: 1rem;
+        }
+
+        .accordion-body{
+            background-color: #f8f9fa;
+            border-radius: 0 0 10px 10px;
+            padding: 1.5rem;
+        }
+
+        footer{
+            background-color: #e8e8e8;
+            color: #000000;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        footer a{
+            color: black;
+            text-decoration: none;
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover{
+            color: #F72C25;
+        }
+
+        .alert{
+            margin: 0;
+            border-radius: 0;
+            border: none;
+            background-color: #fff3cd;
+            border-color: #ffeaa7;
+        }
+
+        .tech-icon{
+            font-size: 3rem;
+            color: #F72C25;
+            margin-bottom: 1rem;
+        }
+
+        /* Estilos específicos para móvil */
+        @media (max-width: 849px){
+            .navbar-collapse{
+                background-color: white;
+                padding: 1rem;
+                border-radius: 10px;
+                margin-top: 1rem;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+
+            .navbar-nav .nav-link{
+                padding: 0.75rem 0;
+                border-bottom: 1px solid #eee;
+            }
+
+            .navbar-nav .nav-link:last-child{
+                border-bottom: none;
+            }
+
+            #caracteristicas .container{
+                flex-direction: column;
+                text-align: center;
+            }
+
+            #caracteristicas img{
+                max-width: 100%;
+            }
+        }
+
+        @media (min-width: 850px){
+            body{
+                padding-top: 76px;
+            }
+
+            header{
+                position: fixed;
+                top: 0;
+                width: 100%;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+
+            .hero h1{
+                font-size: 5rem;
+                margin: 22px;
+            }
+
+            .hero{
+                padding-top: 3rem;
+            }
+
+            #caracteristicas .container{
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Kódigo</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#sobre-nosotros">Sobre nosotros</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index-mas-cursos.html">Cursos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#preguntas-frecuentes">Preguntas frecuentes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" aria-disabled="true">Próximamente</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>¡No te quedes atrás!</strong> El mundo tecnológico te espera, completa tu información.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <section class="hero">
+        <div class="container">
+
+            <h1>Bienvenido a <br><span class="color-acento">Kódigo</span></h1>
+            <p class="lead">Aprende programación y diseño web como los profesionales: con proyectos reales, feedback constante y las tecnologías que realmente usan las empresas. Construye tu portafolio mientras estudias. Tu primer trabajo tech te está esperando.</p>
+            <a href="index-mas-cursos.html" class="btn btn-primary">Conoce nuestros cursos</a>
+            <a href="#caracteristicas" class="btn btn-primary-2">Conoce más sobre nosotros</a>
+        </div>
+    </section>
+
+    <section class="info">
+        <div class="container text-center">
+            <div class="row align-items-start">
+                <div class="col">
+                    <i class="bi bi-house-fill"></i>
+                    <br>
+                    <a href="#">Inicio</a>
+                </div>
+                <div class="col">
+                    <i class="bi bi-journal-bookmark-fill"></i>
+                    <br>
+                    <a href="#preguntas-frecuentes">Preguntas frecuentes</a>
+                </div>
+                <div class="col">
+                    <i class="bi bi-info-circle"></i>
+                    <br>
+                    <a href="#final">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="media/img-1.jpg" class="d-block w-100" alt="Estudiantes aprendiendo programación">
+                </div>
+                <div class="carousel-item">
+                    <img src="media/img-2.jpg" class="d-block w-100" alt="Ambiente de aprendizaje moderno">
+                </div>
+                <div class="carousel-item">
+                    <img src="media/img-3.jpg" class="d-block w-100" alt="Tecnología y educación">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <section id="sobre-nosotros">
+        <div class="container">
+            <div class="texto">
+                <p>¡Únete a nuestra comunidad de desarrolladores y comienza a construir el <span style="color: white; font-weight: bold;">futuro digital</span> que siempre soñaste!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="caracteristicas">
+        <div class="container">
+            <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Imagen de características" class="img-fluid">
+            <div class="texto">
+                <h2>Somos <span class="color-acento">Kódigo</span></h2>
+                <p>Kódigo es una plataforma educativa especializada en la enseñanza de programación y desarrollo web, diseñada para estudiantes de todos los niveles que buscan dominar las tecnologías más demandadas del mercado actual.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="nuestros-cursos">
+        <div class="container">
+            <h1>Algunas de <br>nuestras características</h1>
+
+            <div class="row justify-content-center">
+                <div class="col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 20rem;">
+                        <img src="https://images.pexels.com/photos/574070/pexels-photo-574070.jpeg?_gl=1*1f9f72u*_ga*MTM4MjM4OTg3Mi4xNzc3MjQwMDUx*_ga_8JE65Q40S6*czE3ODA1MjAwNjUkbzIkZzEkdDE3ODA1MjA0OTkkajE1JGwwJGgw" class="card-img-top" alt="Metodología práctica">
+                        <div class="card-body">
+                            <h5 class="card-title">Metodología Learn-by-Doing</h5>
+                            <p class="card-text">Olvídate de la teoría aburrida. Nuestro enfoque es 80% práctica y 20% teoría. Construyes aplicaciones desde la primera clase mientras aprendes los conceptos fundamentales.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 20rem;">
+                        <img src="https://images.pexels.com/photos/18734744/pexels-photo-18734744.jpeg?_gl=1*1c9bmgh*_ga*MTM4MjM4OTg3Mi4xNzc3MjQwMDUx*_ga_8JE65Q40S6*czE3ODA1MjAwNjUkbzIkZzEkdDE3ODA1MjAzNzUkajEzJGwwJGgw" class="card-img-top" alt="Modalidad flexible">
+                        <div class="card-body">
+                            <h5 class="card-title">Modalidad Híbrida Flexible</h5>
+                            <p class="card-text">Combina clases presenciales los fines de semana con contenido online durante la semana, adaptándose a horarios de trabajo y estudio.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 20rem;">
+                        <img src="https://images.pexels.com/photos/37758111/pexels-photo-37758111.jpeg?_gl=1*8inxt5*_ga*MTM4MjM4OTg3Mi4xNzc3MjQwMDUx*_ga_8JE65Q40S6*czE3ODA1MjAwNjUkbzIkZzEkdDE3ODA1MjAxOTAkajE2JGwwJGgw" class="card-img-top" alt="Instructores experimentados">
+                        <div class="card-body">
+                            <h5 class="card-title">Instructores con Experiencia Real</h5>
+                            <p class="card-text">Nuestros profesores son desarrolladores activos que trabajan en empresas locales y startups, combinando la enseñanza con la práctica profesional diaria.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="preguntas-frecuentes">
+        <div class="container">
+            <h1>Preguntas Frecuentes</h1>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            ¿Necesito experiencia previa en programación?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            No necesitas experiencia previa. Nuestros cursos están diseñados para principiantes y te guiaremos paso a paso desde los conceptos básicos hasta proyectos avanzados.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            ¿Cuál es la duración de los cursos?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            La duración varía según el curso. Nuestros programas van desde 3 meses para cursos básicos hasta 6 meses para programas completos de desarrollo web.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            ¿Ofrecen certificación?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Sí, al completar exitosamente cualquiera de nuestros cursos, recibirás un certificado digital que puedes incluir en tu portafolio profesional.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer id="final">
+        <div class="container text-center">
+            <h2>¿Tienes preguntas?</h2>
+            <p>Contáctanos y te ayudaremos a resolver todas tus dudas.</p>
+            <p>&copy; 2025 Kódigo. Todos los derechos reservados.</p>
+            <div class="row align-items-start justify-content-center">
+                <div class="col-auto">
+                    <a href="https://www.linkedin.com/in/estebanruizmolina/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                </div>
+                <div class="col-auto">
+                    <a href="https://github.com/blackberryx05" target="_blank"><i class="bi bi-github"></i></a>
+                </div>
+                <div class="col-auto">
+                    <a href="https://www.instagram.com/werm.25/ "target="_blank"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
